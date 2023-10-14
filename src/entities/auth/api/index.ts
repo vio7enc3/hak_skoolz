@@ -3,15 +3,15 @@ import {
   FetchArgs,
   createApi,
   fetchBaseQuery,
-} from '@reduxjs/toolkit/dist/query/react';
-import { RegistrationUserBody } from '../model';
-import notify from '@/app/providers/toaster/lib/notify';
-import { CustomError } from '@/app/helpers/types';
+} from "@reduxjs/toolkit/dist/query/react";
+import { RegistrationUserBody } from "../model";
+import notify from "@/app/providers/toaster/lib/notify";
+import { CustomError } from "@/app/helpers/types";
 
 export const authApi = createApi({
-  reducerPath: 'authApi',
+  reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API_BASE_URL,
+    baseUrl: "https://hackathon.venkon.uz/",
     responseHandler: async (response) => {
       const result = (await response.json()) as
         | {
@@ -22,18 +22,21 @@ export const authApi = createApi({
             data: unknown;
             success: boolean;
           };
-      if ('error' in result) {
-        notify(result.error.msg, 'error');
+      if ("error" in result) {
+        notify(result.error.msg, "error");
         return Promise.reject(result.error);
       }
       return result;
     },
   }) as BaseQueryFn<string | FetchArgs, unknown, CustomError, {}>,
   endpoints: (builder) => ({
-    userRegistration: builder.mutation<{ authToken: string }, RegistrationUserBody>({
+    userRegistration: builder.mutation<
+      { authToken: string },
+      RegistrationUserBody
+    >({
       query: (body) => ({
-        method: 'post',
-        url: 'exec?action=registration',
+        method: "post",
+        url: "exec?action=registration",
         body,
       }),
     }),
@@ -42,12 +45,13 @@ export const authApi = createApi({
       { email: string; password: string }
     >({
       query: (body) => ({
-        method: 'post',
-        url: 'exec?action=auth',
+        method: "post",
+        url: "exec?action=auth",
         body,
       }),
     }),
   }),
 });
 
-export const { useUserRegistrationMutation, useAuthWithPasswordMutation } = authApi;
+export const { useUserRegistrationMutation, useAuthWithPasswordMutation } =
+  authApi;

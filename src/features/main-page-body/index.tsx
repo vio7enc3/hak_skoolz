@@ -6,7 +6,6 @@ import { ReactComponent as CyrillicAlphabet } from '@/app/assets/icons/cabinet/c
 import { ReactComponent as Geography } from '@/app/assets/icons/cabinet/flags.svg';
 
 import { useTranslation } from 'react-i18next';
-import i18n from '@/app/i18n';
 import { PlayCardItem } from './ui/play-card';
 
 export interface IPlayCard {

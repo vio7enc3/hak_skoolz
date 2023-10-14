@@ -5,3 +5,8 @@ export interface RegistrationUserBody {
   password: string;
   className?: string;
 }
+
+export interface RegistrationCheckResponse {
+  newUser: boolean;
+  unique: number;
+}

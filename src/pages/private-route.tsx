@@ -25,11 +25,11 @@ export const PrivateRoute: React.FC<Props> = ({
     }
 
     if (cabinetTypeCheck && cabinetType !== cabinetTypeCheck) {
-      return <Navigate to='/cabinet' replace />;
+      return <Navigate to='/study' replace />;
     }
 
     if (userTypeCheck && userTypeCheck !== userType) {
-      return <Navigate to='/cabinet' replace />;
+      return <Navigate to='/study' replace />;
     }
 
     return children;

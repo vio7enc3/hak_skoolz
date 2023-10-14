@@ -1,5 +1,3 @@
-import { Invitation } from '@/app/api/model';
-
 export interface SmsConfirmModalProps {
   onConfirm: (code: string) => Promise<void>;
   resendCode: () => Promise<void>;
@@ -13,7 +11,7 @@ export interface SmsConfirmModalRef {
 
 export interface ConfirmModalInitArgs {
   btnText?: string;
-  btnColor?: 'primary' | 'error';
+  btnColor?: "primary" | "error";
   text?: string;
   title?: string;
 }
@@ -22,16 +20,4 @@ export interface ConfirmModalRef {
   init: (args: ConfirmModalInitArgs) => Promise<void>;
   close: () => void;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export interface EmployeeModalFormValues {
-  phone: string;
-  pinfl: string;
-  fullName: string;
-}
-
-export interface BaseEmployeeModalProps<T extends {} = {}> {
-  onSubmit: (values: T) => void;
-  title: string;
-  data?: Invitation;
 }

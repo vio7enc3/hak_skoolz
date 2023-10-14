@@ -1,15 +1,14 @@
-import { Box, Menu, MenuItem, Stack, Typography } from '@mui/material';
-import React from 'react';
-import { ReactComponent as DownChevronIcon } from '@/app/assets/icons/down-chevron.svg';
-import { useTranslation } from 'react-i18next';
-import { Colors } from '@/app/constants';
-import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { useNavigate } from 'react-router-dom';
+import { Box, Menu, MenuItem, Stack, Typography } from "@mui/material";
+import React from "react";
+import { ReactComponent as DownChevronIcon } from "@/app/assets/icons/down-chevron.svg";
+import { useTranslation } from "react-i18next";
+import { Colors } from "@/app/constants";
+import { useAppSelector } from "@/app/hooks";
+import { useNavigate } from "react-router-dom";
 
 const ProfileMenu = () => {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  const { t } = useTranslation('cabinet');
+  const { t } = useTranslation("");
   const { company, user, userType } = useAppSelector((state) => state.session);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -24,21 +23,19 @@ const ProfileMenu = () => {
   };
 
   const logoutHandler = () => {
-    // dispatch(logout());
-
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
     <>
       <Box
         sx={{
-          cursor: 'pointer',
+          cursor: "pointer",
         }}
-        component='div'
+        component="div"
         onClick={handleOpen}
       >
-        <Stack direction='row' alignItems='center'>
+        <Stack direction="row" alignItems="center">
           <Box
             sx={{
               mr: 8,
@@ -47,13 +44,13 @@ const ProfileMenu = () => {
             <Typography
               sx={{
                 fontWeight: 500,
-                maxWidth: '300px',
-                whiteSpace: 'nowrap',
-                textOverflow: 'ellipsis',
-                overflow: 'hidden',
+                maxWidth: "300px",
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+                overflow: "hidden",
               }}
             >
-              {userType === 'company' ? company?.name : user?.name}
+              {userType === "company" ? company?.name : user?.name}
             </Typography>
             {/* <Typography
               sx={{
@@ -68,7 +65,7 @@ const ProfileMenu = () => {
           <Box
             component={DownChevronIcon}
             sx={{
-              '& path': {
+              "& path": {
                 stroke: Colors.TEXT_SECONDARY,
               },
             }}
@@ -80,18 +77,18 @@ const ProfileMenu = () => {
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
+          vertical: "bottom",
+          horizontal: "right",
         }}
         slotProps={{
           paper: {
             sx: {
-              width: '220px',
+              width: "220px",
             },
           },
         }}
       >
-        <MenuItem onClick={logoutHandler}>{t('logout')}</MenuItem>
+        <MenuItem onClick={logoutHandler}>{t("logout")}</MenuItem>
       </Menu>
     </>
   );

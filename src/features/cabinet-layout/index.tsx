@@ -46,7 +46,7 @@ export const CabinetLayout: React.FC<Props> = ({ title, children, backLink }) =>
         }}
         id='cabinet-layout-main'
       >
-        <Stack component='header' direction='row' justifyContent='space-between'>
+        {/* <Stack component='header' direction='row' justifyContent='space-between'>
           <Stack direction='row' alignItems='center' spacing={2}>
             {backLink && <BackBtn to={backLink} />}
             <Typography variant='h2'>{title}</Typography>
@@ -69,7 +69,7 @@ export const CabinetLayout: React.FC<Props> = ({ title, children, backLink }) =>
             </ButtonBaseComp>
             <ProfileMenu />
           </Stack>
-        </Stack>
+        </Stack> */}
         <Box
           sx={{
             mt: 3.75,

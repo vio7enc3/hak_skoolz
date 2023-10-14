@@ -1,7 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { SessionState } from './types';
 import _ from 'lodash';
-import { axiosInstance } from '@/app/api';
 
 const initialState: SessionState = {
   isLogged: localStorage.getItem('token') ? true : false,
@@ -23,7 +22,7 @@ export const sessionSlice = createSlice({
       // state.userType = 'person';
       // }
       state.token = action.payload.authToken;
-      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${action.payload.authToken}`;
+      // axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${action.payload.authToken}`;
       localStorage.setItem('user', action.payload.email);
       localStorage.setItem('token', action.payload.authToken);
     },

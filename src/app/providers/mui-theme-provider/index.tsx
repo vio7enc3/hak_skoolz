@@ -1,39 +1,39 @@
-import { Colors } from '@/app/constants';
-import { ThemeProvider, createTheme } from '@mui/material';
-import React, { PropsWithChildren, useMemo } from 'react';
-import { ReactComponent as CheckedIcon } from '@/app/assets/icons/checkbox-checked.svg';
-import { ReactComponent as UnCheckedIcon } from '@/app/assets/icons/checkbox-unchecked.svg';
-import { ReactComponent as RadionCheckedIcon } from '@/app/assets/icons/radio_checked.svg';
-import { ReactComponent as RadionUnCheckedIcon } from '@/app/assets/icons/radio_unchecked.svg';
-import { ReactComponent as ChevronDown } from '@/app/assets/icons/down-chevron.svg';
+import { Colors } from "@/app/constants";
+import { ThemeProvider, createTheme } from "@mui/material";
+import React, { PropsWithChildren, useMemo } from "react";
+import { ReactComponent as CheckedIcon } from "@/app/assets/icons/checkbox-checked.svg";
+import { ReactComponent as UnCheckedIcon } from "@/app/assets/icons/checkbox-unchecked.svg";
+import { ReactComponent as RadionCheckedIcon } from "@/app/assets/icons/radio_checked.svg";
+import { ReactComponent as RadionUnCheckedIcon } from "@/app/assets/icons/radio_unchecked.svg";
+import { ReactComponent as ChevronDown } from "@/app/assets/icons/down-chevron.svg";
 
 const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const theme = useMemo(
     () =>
       createTheme({
         typography: {
-          fontFamily: 'ibm-plex-sans, sans-serif',
+          fontFamily: "ibm-plex-sans, sans-serif",
           htmlFontSize: 14,
           body1: {
-            fontSize: '1rem',
+            fontSize: "1rem",
           },
           body2: {
-            fontSize: '0.86rem',
+            fontSize: "0.86rem",
           },
           h2: {
-            fontSize: '1.86rem',
+            fontSize: "1.86rem",
             fontWeight: 600,
           },
           h3: {
-            fontSize: '1.28rem',
+            fontSize: "1.28rem",
             fontWeight: 600,
           },
           h4: {
-            fontSize: '1.21rem',
+            fontSize: "1.21rem",
             fontWeight: 600,
           },
           subtitle1: {
-            fontSize: '1.21rem',
+            fontSize: "1.21rem",
             fontWeight: 400,
             color: Colors.TEXT_SECONDARY,
           },
@@ -49,7 +49,7 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
         },
         palette: {
           primary: {
-            main: Colors.PRIMARY,
+            main: Colors.TURQUOISE,
           },
           secondary: {
             main: Colors.SECONDARY,
@@ -70,25 +70,25 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
             },
             styleOverrides: {
               maxWidthLg: {
-                paddingLeft: '6px',
-                paddingRight: '6px',
+                paddingLeft: "6px",
+                paddingRight: "6px",
               },
             },
           },
           MuiTypography: {
             defaultProps: {
-              color: 'textPrimary',
+              color: "textPrimary",
             },
           },
           MuiTextField: {
             defaultProps: {
-              variant: 'outlined',
+              variant: "outlined",
             },
           },
           MuiInputBase: {
             styleOverrides: {
               root: {
-                '&.Mui-disabled': {
+                "&.Mui-disabled": {
                   backgroundColor: Colors.LIGHT_TURQUOISE,
                 },
               },
@@ -97,19 +97,19 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
           MuiOutlinedInput: {
             styleOverrides: {
               root: {
-                borderRadius: '8px',
+                borderRadius: "8px",
                 backgroundColor: Colors.TEXT_WHITE,
               },
               notchedOutline: {
                 borderColor: Colors.BORDER,
               },
               multiline: {
-                padding: '10px 0',
+                padding: "10px 0",
               },
               input: {
-                padding: '10px 14px',
-                height: '20px',
-                '&::placeholder': {
+                padding: "10px 14px",
+                height: "20px",
+                "&::placeholder": {
                   color: Colors.TEXT_SECONDARY,
                   opacity: 1,
                 },
@@ -119,8 +119,8 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
           MuiInputLabel: {
             styleOverrides: {
               outlined: {
-                '&:not(.MuiInputLabel-shrink)': {
-                  transform: 'translate(14px, 10px) scale(1)',
+                "&:not(.MuiInputLabel-shrink)": {
+                  transform: "translate(14px, 10px) scale(1)",
                 },
               },
             },
@@ -130,15 +130,15 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
               root: {
                 color: Colors.TEXT_DARK,
                 fontWeight: 500,
-                fontSize: '0.9rem',
-                display: 'flex',
-                flexDirection: 'row-reverse',
-                justifyContent: 'flex-end',
-                marginBottom: '4px',
+                fontSize: "0.9rem",
+                display: "flex",
+                flexDirection: "row-reverse",
+                justifyContent: "flex-end",
+                marginBottom: "4px",
               },
               asterisk: {
                 color: Colors.ERROR,
-                marginRight: '2px',
+                marginRight: "2px",
               },
             },
           },
@@ -147,7 +147,7 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
               root: {
                 marginRight: 0,
                 marginLeft: 0,
-                font: '0.86rem',
+                font: "0.86rem",
                 fontWeight: 500,
               },
             },
@@ -160,25 +160,25 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
           },
           MuiButton: {
             defaultProps: {
-              variant: 'contained',
+              variant: "contained",
               disableRipple: true,
             },
             styleOverrides: {
               root: {
-                textTransform: 'none',
-                borderRadius: '8px',
-                boxShadow: 'none',
-                padding: '10px 32px',
-                border: 'none',
-                fontSize: '1rem',
-                height: '40px',
-                lineHeight: '1',
+                textTransform: "none",
+                borderRadius: "8px",
+                boxShadow: "none",
+                padding: "10px 32px",
+                border: "none",
+                fontSize: "1rem",
+                height: "40px",
+                lineHeight: "1",
                 color: Colors.DARK,
                 fontWeight: 600,
               },
               containedSecondary: {
                 backgroundColor: Colors.LIGHT_BLUE,
-                '&:hover': {
+                "&:hover": {
                   backgroundColor: Colors.LIGHT_BLUE,
                 },
               },
@@ -188,53 +188,53 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
             defaultProps: {
               popupIcon: <ChevronDown />,
               getOptionLabel: (option) => {
-                if (typeof option === 'object' && 'name' in option) {
+                if (typeof option === "object" && "name" in option) {
                   return option.name;
                 }
-                if (typeof option === 'object' && 'label' in option) {
+                if (typeof option === "object" && "label" in option) {
                   return option.label;
                 }
 
-                if (typeof option === 'string') {
+                if (typeof option === "string") {
                   return option;
                 }
-                return '';
+                return "";
               },
             },
             styleOverrides: {
               inputRoot: {
-                paddingTop: '2.5px',
-                paddingBottom: '2.5px',
+                paddingTop: "2.5px",
+                paddingBottom: "2.5px",
               },
               popupIndicator: {
-                height: '24px',
-                width: '24px',
+                height: "24px",
+                width: "24px",
               },
               endAdornment: {
-                top: 'calc(50% - 12px)',
+                top: "calc(50% - 12px)",
               },
             },
           },
           MuiTooltip: {
             defaultProps: {
-              placement: 'top',
+              placement: "top",
               disableInteractive: true,
             },
             styleOverrides: {
               tooltip: {
-                fontSize: '0.86rem',
+                fontSize: "0.86rem",
                 color: Colors.TEXT_DARK,
-                background: Colors.PRIMARY,
+                background: Colors.TURQUOISE,
               },
               arrow: {
-                color: Colors.PRIMARY,
+                color: Colors.TURQUOISE,
               },
             },
           },
           MuiDialog: {
             styleOverrides: {
               paper: {
-                borderRadius: '8px',
+                borderRadius: "8px",
               },
             },
           },
@@ -248,7 +248,7 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
             styleOverrides: {
               label: {
                 fontWeight: 600,
-                fontSize: '1rem',
+                fontSize: "1rem",
               },
             },
           },
@@ -257,9 +257,9 @@ const MuiThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
               root: {
                 color: Colors.TEXT_SECONDARY,
                 fontWeight: 600,
-                textTransform: 'none',
-                padding: '20px 30px',
-                ' &.Mui-selected': {
+                textTransform: "none",
+                padding: "20px 30px",
+                " &.Mui-selected": {
                   color: Colors.TEXT_DARK,
                 },
               },

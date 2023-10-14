@@ -6,7 +6,7 @@ import { IPlayCard } from '..';
 import { Colors } from '@/app/constants';
 
 export const PlayCardItem: FC<IPlayCard> = ({ bgColor, btnText, Icon, btnDisabled, title }) => {
-  const { t } = useTranslation('cabinet');
+  const { t } = useTranslation('');
 
   return (
     <Box

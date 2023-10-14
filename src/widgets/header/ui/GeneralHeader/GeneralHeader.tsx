@@ -59,7 +59,7 @@ export const GeneralHeader: React.FC = () => {
                   textDecoration: 'none',
                 }}
                 component={Link}
-                to='/cabinet'
+                to='/training'
               >
                 {/* <Box component={UserIcon} /> */}
                 <Tooltip title={userType === 'company' ? company?.name : user?.name}>

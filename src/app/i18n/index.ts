@@ -1,16 +1,16 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import Backend from 'i18next-http-backend';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import Backend from "i18next-http-backend";
 
 i18n
   .use(initReactI18next)
   .use(Backend)
   .init(
     {
-      ns: ['common', 'registration', 'errors', 'login', 'header', 'cabinet'],
-      defaultNS: 'common',
-      lng: localStorage.getItem('lang') ?? 'uz',
-      fallbackLng: 'uz',
+      ns: ["common", "registration", "errors", "login", "header"],
+      defaultNS: "common",
+      lng: localStorage.getItem("lang") ?? "uz",
+      fallbackLng: "uz",
       interpolation: {
         escapeValue: false,
       },
@@ -21,8 +21,8 @@ i18n
       },
       backend: {
         loadPath: import.meta.env.DEV
-          ? '/public/locales/{{lng}}/{{ns}}.json'
-          : '/locales/{{lng}}/{{ns}}.json',
+          ? "/public/locales/{{lng}}/{{ns}}.json"
+          : "/locales/{{lng}}/{{ns}}.json",
       },
     },
     (error) => {
